@@ -1,0 +1,751 @@
+/* =========================
+   RESET & BASIS
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+}
+
+
+/* =========================
+   FARBEN
+========================= */
+:root {
+  --light-gray: #e6e6e6;
+  --section-gray: #f2f3f5;
+  --dark-gray: #3a3a3a;
+  --blue: #0284C3;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+header {
+  background: #ffffff;
+  border-bottom: 1px solid var(--light-gray);
+  padding: 18px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 42px;
+}
+
+
+nav {
+  display: flex;
+  gap: 35px;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 17.5px;
+  color: #000000;
+  display: inline-flex;
+  align-items: center;
+}
+
+nav a:hover {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+
+/* =========================
+   DROPDOWN NAVIGATION
+========================= */
+.nav-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  width: max-content;
+  min-width: unset;
+  padding: 6px 0;
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  display: none;
+  z-index: 1001;
+}
+
+.dropdown-menu a {
+  padding: 6px 14px;
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  border-bottom: 1px solid #e6e6e6; 
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+  background: #f2f3f5;
+  color: #0284C3;
+}
+
+/* Anzeigen beim Hover */
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+/* =========================
+   KONTAKT HERVORHEBUNG
+========================= */
+nav a.nav-contact {
+  background: #ffffff;
+  color: #0284C3;
+  padding: 8px 16px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+}
+
+nav a.nav-contact:hover {
+  background: #f7f9fc;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+
+/* =========================
+   ERSTER WEISSER TEXTBEREICH
+========================= */
+.content-white {
+  background: #ffffff;
+  padding: 70px 60px 50px;
+  text-align: center;
+}
+
+.content-white h1 {
+  color: #0284C3;
+  font-size: 32px;
+  margin-bottom: 6px;
+}
+
+.content-white h2 {
+  font-size: 18px;
+  font-weight: normal;
+  color: #0284C3;
+  margin: 0 0 18px 0;
+}
+
+.content-white ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 18px auto;
+  max-width: 900px;
+  text-align: left;
+}
+
+.content-white li {
+  font-size: 15px;
+  line-height: 1.45;
+  margin-bottom: 8px;
+  padding-left: 22px;
+  position: relative;
+}
+
+.content-white li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+}
+
+
+/* =========================
+   QUELLE
+========================= */
+.source {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.4;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+
+/* =========================
+   GRAUER KONTAKTBEREICH
+========================= */
+.contact-gray {
+  background: var(--section-gray);
+  padding: 80px 60px;
+}
+
+
+/* =========================
+   GRID
+========================= */
+.contact-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* =========================
+   LINKS
+========================= */
+.contact-left h2 {
+ font-size: 20px;
+ margin-bottom: 25px;
+ color: #0284C3;
+}
+
+.contact-right h2 {
+  font-size: 20px;
+  margin-bottom: 25px;
+  color: #0284C3;
+}
+
+
+/* =========================
+   KARTEN
+========================= */
+.cards {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.card {
+  width: 260px;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  padding: 25px 20px;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 125px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.card h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #0284C3;
+}
+
+.card-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.icon-brille {
+  transform: scale(1.75);
+}
+
+.card p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.card .day {
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.card .line {
+  height: 1px;
+  background: var(--light-gray);
+  margin: 8px 0 10px;
+}
+
+.parking {
+  font-size: 14px;
+  color: #0284C3;
+  margin-top: 15px;
+}
+
+
+/* =========================
+   RECHTS – KARTE + ADRESSE
+========================= */
+.map-box {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 1 / 1;
+  background: #ffffff;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.address-box {
+  width: 100%;
+  max-width: 260px;
+  background: #ffffff;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  font-size: 14px;
+  color: #000000;
+  font-weight: 600;
+  gap: 10px;
+  margin-top: -4px;
+}
+
+.map-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   UNTERER WEISSER BEREICH – KONTAKTINFOS
+========================= */
+
+.content-white-small {
+  background: #ffffff;
+  padding: 60px;
+}
+
+.bottom-info {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* LOGO + ADRESSE */
+.logo-text {
+  display: flex;
+  align-items: center;
+  gap: 75px;
+}
+
+.logo-text img {
+  max-width: 290px;
+  height: auto;
+}
+
+.logo-text p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* INFO-BOXEN */
+.info-boxes {
+  display: flex;
+  gap: 24px;
+}
+
+.info-box {
+  width: 260px;
+  padding: 18px 20px;
+  border-radius: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.info-box .title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* Text in Box */
+.info-box p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.info-box a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.info-box a:hover {
+  text-decoration: underline;
+}
+
+/* Farben */
+.info-box.blue {
+  background: #0284C3;
+}
+
+.info-box.green {
+  background: #2e8b57;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: var(--dark-gray);
+  padding: 20px 60px;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-separator {
+  color: #ffffff;
+  margin: 0 8px;
+  display: inline-block;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1024px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+
+/* =========================
+   IMPRESSUM
+========================= */
+.impressum-white {
+  background: #ffffff;
+  padding: 80px 60px;
+}
+
+.impressum-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.impressum-logo {
+  display: block;
+  margin: 0 auto 40px;
+  height: 60px;
+}
+
+.impressum-content h1 {
+  text-align: center;
+  color: #0284C3;
+  margin-bottom: 40px;
+}
+
+.impressum-content h2 {
+  color: #0284C3;
+  margin-top: 28px;
+  margin-bottom: 6px; 
+  font-size: 18px;
+}
+
+.impressum-content p {
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.impressum-source a {
+  text-decoration: none;
+}
+
+.impressum-source a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   HELLGRÜNER UNTERBEREICH
+========================= */
+.light-green {
+  background: #f2f6f3;
+}
+
+
+/* =========================
+   Hören
+========================= */
+.benefits-list {
+  margin: 10px 0 0 0;
+  padding-left: 20px;
+}
+
+.benefits-list li {
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+
+/* =========================
+   KONTAKT – ZENTRALER WRAPPER
+========================= */
+
+.contact-page {
+  max-width: 1200px;   /* EIN Wert für alles */
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* =========================
+   MAP (wie Index)
+========================= */
+
+.map-box {
+  max-width: 850px;   /* A4-ähnlich */
+  height: 350px;
+  margin: 0 auto;     /* zentrieren */
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* =========================
+   ADRESSE – direkt unter Map
+========================= */
+
+.address-box {
+  width: 100%;
+  max-width: 850px;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: #f5f5f5;
+  border-top: 1px solid #ddd;
+}
+
+/* =========================
+   TELEFON-BOXEN – GLEICHE BREITE
+========================= */
+
+.contact-info-wide {
+  max-width: 850px;     /* wie Karte */
+  margin: 30px auto 60px;
+  display: flex;
+  gap: 30px;
+}
+
+.contact-info-wide .info-box {
+  flex: 1;
+  padding: 20px;
+  font-size: 1rem;
+}
+
+/* =========================
+   FORMULAR
+========================= */
+
+/* Kontaktformular */
+.contact-form {
+  max-width: 650px;
+  margin: 60px auto;
+}
+
+/* Zeile: Label links, Feld rechts */
+.contact-form .form-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+/* Labels links */
+.contact-form label {
+  width: 150px;
+  text-align: right;
+  margin-right: 14px;
+  padding-top: 6px;
+  font-size: 0.9rem;
+}
+
+/* Basis-Stil Felder */
+.contact-form input,
+.contact-form textarea {
+  padding: 8px 10px;
+  border: 1px solid #999;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+/* 🔥 UNTERSCHIEDLICHE BREITEN – JETZT WIRKSAM */
+.contact-form .name-row input {
+  width: 180px;
+}
+
+.contact-form .email-row input {
+  width: 300px;
+}
+
+.contact-form .message-row textarea {
+  width: 420px;
+  min-height: 130px;
+  resize: vertical;
+}
+
+
+/* =========================
+   sehen
+========================= */
+
+.content-split {
+    display: flex;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 60px auto;
+    align-items: center;
+}
+
+.content-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 4px;
+}
+
+.content-text {
+    flex: 1;
+}
+
+.content-text h2 {
+    color: #0284C3;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 900px) {
+    .content-split {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .content-image img {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================
+   Ueber Uns
+========================= */
+/* NUR ÜBER UNS – Zusatzlayout */
+
+.about-hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.about-hero img {
+    max-width: 900px;
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.team-section {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 40px;
+    margin-top: 40px;
+}
+
+.team-grid.two {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+    margin: 60px auto 0;
+}
+
+.team-grid.one {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    margin: 60px auto 0;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.team-member h3 {
+    margin: 14px 0 4px;
+    color: #0284C3;
+    font-size: 1.05rem;
+}
+
+.team-member p {
+    font-size: 0.9rem;
+    color: #333;
+}
