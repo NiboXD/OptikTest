@@ -19,21 +19,21 @@
     </div>
 
     <nav>
-        <a href="index.html" class="active">Aktuelles</a>
+        <a href="index.html">Aktuelles</a>
 
         <div class="nav-dropdown">
-            <a href="sehen.html">Sehen</a>
+            <a href="pages/sehen.html">Sehen</a>
             <div class="dropdown-menu">
-                <a href="arbeitsschutz.html" class="active">Arbeitsschutz</a>
-                <a href="sonnenbrillen.html">Sonnenbrillen</a>
-                <a href="kinderbrillen.html">Kinderbrillen</a>
+                <a href="pages/arbeitsschutz.html">Arbeitsschutz</a>
+                <a href="pages/sonnenbrillen.html">Sonnenbrillen</a>
+                <a href="pages/kinderbrillen.html">Kinderbrillen</a>
             </div>
         </div>
 
-        <a href="hoeren.html">Hören</a>
-        <a href="service.html">Service</a>
-        <a href="ueber_uns.html">Über Uns</a>
-        <a href="kontakt.html" class="nav-contact">Kontakt</a>
+        <a href="pages/hoeren.html">Hören</a>
+        <a href="pages/service.html">Service</a>
+        <a href="pages/ueber_uns.html">Über Uns</a>
+        <a href="pages/kontakt.html" class="nav-contact">Kontakt</a>
     </nav>
 </header>
 
@@ -44,7 +44,9 @@
     <section class="content-white">
 
         <div class="page-logo">
-            <img src="images/logo.png" alt="Seebaum Optik & Hörgeräte">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Seebaum Optik & Hörgeräte">
+            </a>
         </div>
 
         <h1>Präzision bei Gleitsichtbrillen</h1>
@@ -85,7 +87,7 @@
                         <div class="line"></div>
 
                         <p class="day">Montag – Freitag</p>
-                        <p>08:30 – 13:00 Uhr<br>14:00 – 18:30 Uhr</p>
+                        <p>08:30 – 13:00 Uhr<br>14:00 – 18:00 Uhr</p>
 
                         <div class="line"></div>
 
@@ -102,7 +104,7 @@
                         <div class="line"></div>
 
                         <p class="day">Montag – Freitag</p>
-                        <p>08:30 – 13:00 Uhr<br>14:00 – 17:30 Uhr</p>
+                        <p>08:30 – 13:00 Uhr<br>14:00 – 18:00 Uhr</p>
 
                         <div class="line"></div>
 
@@ -204,6 +206,27 @@
     <span class="footer-separator">|</span>
     <a href="datenschutz.html">Datenschutz</a>
 </footer>
+
+<button id="scrollTopBtn" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" width="26" height="26">
+    <!-- focus arrow -->
+    <path d="
+      M12 4
+      L6.5 10
+      M12 4
+      L17.5 10
+      M12 4
+      V20
+    "
+    stroke="#0284C3"
+    stroke-width="2.2"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<script src="../js/script.js"></script>
 
 </body>
 </html>

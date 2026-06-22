@@ -185,6 +185,12 @@ nav a.nav-contact:hover {
   font-weight: bold;
 }
 
+.clickable-section {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 
 /* =========================
    QUELLE
@@ -639,16 +645,18 @@ footer a:hover {
 
 /* 🔥 UNTERSCHIEDLICHE BREITEN – JETZT WIRKSAM */
 .contact-form .name-row input {
-  width: 180px;
+  width: 300px;
+  height: 30px;
 }
 
 .contact-form .email-row input {
   width: 300px;
+  height: 30px;
 }
 
 .contact-form .message-row textarea {
-  width: 420px;
-  min-height: 130px;
+  width: 500px;
+  min-height: 130xp;
   resize: vertical;
 }
 
@@ -748,4 +756,45 @@ footer a:hover {
 .team-member p {
     font-size: 0.9rem;
     color: #333;
+}
+
+
+/* =========================
+   scrollTopBtn
+========================= */
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+
+  width: 58px;
+  height: 58px;
+
+  background: #F2F6F3;
+  border: 2px solid #2E8B57;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all 0.25s ease;
+}
+
+/* lens hover effect (focus feeling) */
+#scrollTopBtn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 6px rgba(2, 132, 195, 0.08);
+}
+
+/* visible state */
+#scrollTopBtn.show {
+  opacity: 1;
+  visibility: visible;
 }
